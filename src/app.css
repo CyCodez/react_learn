@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.booklist{
+.movielist{
     /* width: 90vw; */
     max-width: 1170px;
     margin: 5rem auto;
@@ -13,12 +13,12 @@
 }
 
 @media screen and (min-width:760px){
-    .booklist{
+    .movielist{
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.book{
+.movie{
     background: #ffd;
     border-radius: 1rem;
     padding:1rem 2rem;
