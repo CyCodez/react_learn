@@ -1,42 +1,74 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.movielist{
-    /* width: 90vw; */
-    max-width: 1170px;
-    margin: 5rem auto;
-    display: grid;
-    gap: 2rem;
+.movielist {
+  /* width: 90vw; */
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
 }
 
-@media screen and (min-width:760px){
-    .movielist{
-        grid-template-columns: repeat(3, 1fr);
-    }
+@media screen and (min-width: 760px) {
+  .movielist {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.movie{
-    background: #ffd;
-    border-radius: 1rem;
-    padding:1rem 2rem;
+.movie {
+  background: #ffd;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
 }
-.button{
-    background-color: blue;
-    color: white;
-    margin:10px;
-    padding: 10px;
-}
-
-.para{
-    font-size: large;
-    margin: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.button {
+  background-color: blue;
+  color: white;
+  margin: 10px;
+  padding: 10px;
 }
 
-.fruits{
-background-color: aliceblue;
-padding: 5px;
+.para {
+  font-size: large;
+  margin: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.fruits {
+  background-color: aliceblue;
+  padding: 5px;
+}
+
+/* .maindiv {
+  max-width: 600px;
+  width: 100px;
+  margin: 0 auto;
+} */
+
+.avatar {
+  background-color: bisque;
+  width: 800px;
+  padding: 40px;
+  margin: 20px 60px;
+  border: 2px solid whitesmoke;
+  border-radius: 50px;
+}
+
+.car {
+  background-color: aquamarine;
+  color: aliceblue;
+  padding: 20px;
+  text-align: center;
+  width: 500px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.cardiv {
+  max-width: 600px;
+  width: 100px;
+  margin: 40px;
 }
