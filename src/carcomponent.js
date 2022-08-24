@@ -6,13 +6,13 @@ function Car({ list }) {
 
 export function App() {
   const cars = [
-    { brand: "ford", color: "red", year: 2020 },
-    { brand: "toyota", color: "blue", year: 2021 },
-    { brand: "toyota", color: "blue", year: 2021 },
+    { id: 1, brand: "ford", color: "red", year: 2020 },
+    { id: 2, brand: "toyota", color: "blue", year: 2021 },
+    { id: 3, brand: "toyota", color: "blue", year: 2021 },
   ];
 
   const listcar = cars.map((car) => {
-    return <Car list={car} />;
+    return <Car list={car} key={car.id} />;
   });
   return <div className="cardiv">{listcar}</div>;
 }
