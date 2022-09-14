@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  background-color: #ccc;
+}
 .movielist {
   /* width: 90vw; */
   max-width: 1170px;
@@ -105,4 +107,34 @@ input {
   cursor: pointer;
   max-width: 200px;
   width: 400px;
+}
+.dbase {
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Navigate {
+  background-color: orange;
+  color: black;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+.navigation {
+  margin: 20px auto;
+}
+.pagestyle {
+  border: 1px solid black;
+  width: 300px;
+}
+.space {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 100px;
+  color: green;
+  background-color: white;
+}
+.auth-title {
+  font-size: 25px;
 }

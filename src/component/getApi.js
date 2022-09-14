@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function Getmyapi() {
+function Getmyapi() {
   const [user, getuser] = useState([]);
 
   const asyncFunc = async () => {
@@ -16,14 +16,15 @@ export function Getmyapi() {
   return (
     <h1>
       {user.map((uses) => {
-        const { id, login, avatar_url, html_url } = uses;
+        const { id, login, avatar_url } = uses;
         return (
-          <p keys={id} className="avatar">
+          <p key={id} className="avatar">
             <img src={avatar_url} alt={login} width="150px" height="150px" />
-            <p>name</p>
           </p>
         );
       })}
     </h1>
   );
 }
+
+export default Getmyapi;

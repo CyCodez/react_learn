@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function Mystate() {
+function Mystate() {
   const [size, setsize] = useState(window.innerWidth);
   const [fruit, setfruit] = useState("apple");
   const [number, setnumber] = useState(1);
@@ -65,3 +65,5 @@ export function Mystate() {
     </div>
   );
 }
+
+export default Mystate;
