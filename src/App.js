@@ -62,6 +62,7 @@ function MovieList() {
 
   return (
     <div>
+      <Rout />
       {user ? (
         <div style={{ textAlign: "center" }}>
           <div className="auth-title">welcome you are signed in</div>
@@ -86,7 +87,7 @@ function MovieList() {
       )}
       <MyReducer />
       <Pagination />
-      <Rout />
+      {/* <Rout /> */}
       <MyForm />
       <div className="movielist">
         {movies.map((movie) => {

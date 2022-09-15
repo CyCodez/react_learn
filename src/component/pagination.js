@@ -7,6 +7,12 @@ function Pagination() {
 
   const [button, setbutton] = useState([]);
 
+  const [myobj, setmyobj] = useState({
+    name: "cyrus",
+    age: 25,
+    occupation: "programming",
+  });
+
   useEffect(() => {
     const myItems = [
       {
@@ -50,14 +56,25 @@ function Pagination() {
     event.preventDefault();
     if (count > 0) {
       setcount(count - 1);
+    } else {
+      setcount(button.length - 1);
     }
   };
+
+  const handlebut = () =>
+    setmyobj((state) => {
+      return { ...state, occupation: "developer" };
+    });
   return (
     <div>
-      <p>
+      <button onClick={handlebut}>click</button>
+      <p>{myobj.name}</p>
+      <p>{myobj.age}</p>
+      <p>{myobj.occupation}</p>
+      <div>
         <img src={image.img} alt="" width="150px" height="150px" />
         <p>{image.title}</p>
-      </p>
+      </div>
       <button onClick={handlePrev} className="submit">
         prev
       </button>

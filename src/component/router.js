@@ -36,20 +36,42 @@ function Home() {
 }
 
 function About() {
+  console.log("abut");
   return (
     <div>
-      <h1>About</h1>
+      <h1 className="submit">About me</h1>
       <p>this is my About page</p>
+
       <p>click Home button to go back to home page</p>
+
       <Navigation />
     </div>
   );
 }
+function Myout() {
+  return (
+    <div>
+      <p>i am an outlet</p>
+    </div>
+  );
+}
+
+function Another() {
+  return (
+    <div>
+      <p>i am another one</p>
+    </div>
+  );
+}
+
 function Rout() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/about" element={<About />}>
+        <Route path="out" element={<Myout />} />
+        <Route path=":another" element={<Another />} />
+      </Route>
     </Routes>
   );
 }
