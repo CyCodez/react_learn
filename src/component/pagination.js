@@ -8,7 +8,7 @@ function Pagination() {
   const [button, setbutton] = useState([]);
 
   const [myobj, setmyobj] = useState({
-    name: "cyrus",
+    name: "uwaoma",
     age: 25,
     occupation: "programming",
   });

@@ -45,7 +45,7 @@ export function Home() {
 
 export function About() {
   const location = useLocation();
-  // console.log(location);
+  console.log(location);
   const { out } = useParams();
   // console.log(param);
   return (
@@ -62,7 +62,7 @@ export function About() {
 
 function Myout() {
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   // console.log(location);
   return (
     <div>
