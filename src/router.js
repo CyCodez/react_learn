@@ -1,4 +1,12 @@
-import { NavLink, Routes, Route } from "react-router-dom";
+import {
+  NavLink,
+  Routes,
+  Route,
+  Outlet,
+  useNavigate,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 function Navigation() {
   return (
     <section className="navigation">
@@ -36,21 +44,62 @@ export function Home() {
 }
 
 export function About() {
+  const location = useLocation();
+  // console.log(location);
+  const { out } = useParams();
+  // console.log(param);
   return (
     <div>
       <h1>About</h1>
       <p>this is my About page</p>
       <p>click Home button to go back to home page</p>
+      <p>i am a param of value {out}</p>
       <Navigation />
+      <Outlet />
     </div>
   );
 }
+
+function Myout() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  // console.log(location);
+  return (
+    <div>
+      <p>i am an outlet</p>
+      <button onClick={() => navigate("/about")}>navigate to home</button>
+    </div>
+  );
+}
+
+function Layout() {
+  return <Head>I am the heading layout</Head>;
+}
+
+function Head(props) {
+  return <h1 style={{ fontSize: "55px", color: "green" }}>{props.children}</h1>;
+}
+
+function Another() {
+  return (
+    <div>
+      <p>i am another one</p>
+    </div>
+  );
+}
+
 function Rout() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-    </Routes>
+    <>
+      <Layout />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />}>
+          <Route path="out" element={<Myout />} />
+          <Route path=":another" element={<Another />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

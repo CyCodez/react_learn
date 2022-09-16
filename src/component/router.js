@@ -48,21 +48,6 @@ function About() {
     </div>
   );
 }
-function Myout() {
-  return (
-    <div>
-      <p>i am an outlet</p>
-    </div>
-  );
-}
-
-function Another() {
-  return (
-    <div>
-      <p>i am another one</p>
-    </div>
-  );
-}
 
 function Rout() {
   return (
