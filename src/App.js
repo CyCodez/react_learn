@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import shrinkage from "./shrinkage.webp";
+import rainbow from "./rainbow.webp";
 import Rout from "./router";
+import useFetch from "./useFetch";
 import "./app.css";
 import {
   movies,
@@ -19,7 +22,19 @@ import {
   onAuthStateChanged,
 } from "./config";
 
+const myname = { firstname: "shrinkage", secondname: "rainbow" };
+
+function Myprops(prop) {
+  return (
+    <div>
+      <img src={prop.myprops} alt="" width="150px" height="200px" />
+      <p>my name is {prop.myName} </p>
+    </div>
+  );
+}
+
 function MovieList() {
+  const { state, setstate, addition, subtraction, reset } = useFetch(0);
   const [signedIn, setsignedIn] = useState(false);
   const [user, setUser] = useState(null);
   const signIn = (event) => {
@@ -62,7 +77,18 @@ function MovieList() {
 
   return (
     <div>
-      <Rout />
+      <div>
+        <Myprops myprops={shrinkage} myName={myname.firstname} />
+      </div>
+
+      <Myprops myprops={rainbow} myName={myname.secondname} />
+      <Myprops myprops={rainbow} myName={myname.secondname} />
+      <div>
+        <p>{state}</p>
+        <button onClick={addition}>increase</button>
+        <button onClick={subtraction}>decrease</button>
+        <button onClick={() => setstate(state * 3)}>multiply</button>
+      </div>
       {user ? (
         <div style={{ textAlign: "center" }}>
           <div className="auth-title">welcome you are signed in</div>
@@ -87,7 +113,7 @@ function MovieList() {
       )}
       <MyReducer />
       <Pagination />
-      {/* <Rout /> */}
+      <Rout />
       <MyForm />
       <div className="movielist">
         {movies.map((movie) => {
