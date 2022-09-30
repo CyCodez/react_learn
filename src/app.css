@@ -138,3 +138,12 @@ input {
 .auth-title {
   font-size: 25px;
 }
+
+.main_add {
+  background-color: rgb(181, 247, 181);
+  width: 200px;
+  padding: 40px;
+  margin: 5px 30px;
+  border: 2px solid black;
+  border-radius: 25px;
+}

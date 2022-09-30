@@ -46,14 +46,14 @@ export function Home() {
 export function About() {
   const location = useLocation();
   console.log(location);
-  const { out } = useParams();
+  const { another } = useParams();
   // console.log(param);
   return (
     <div>
       <h1>About</h1>
       <p>this is my About page</p>
       <p>click Home button to go back to home page</p>
-      <p>i am a param of value {out}</p>
+      <p>i am a param of value {another}</p>
       <Navigation />
       <Outlet />
     </div>
@@ -87,7 +87,16 @@ function Another() {
     </div>
   );
 }
-
+const Notfound = () => {
+  return (
+    <div>
+      <p style={{ color: "red", fontSize: "20px" }}>
+        {" "}
+        error 404 page Not found
+      </p>
+    </div>
+  );
+};
 function Rout() {
   return (
     <>
@@ -98,6 +107,7 @@ function Rout() {
           <Route path="out" element={<Myout />} />
           <Route path=":another" element={<Another />} />
         </Route>
+        <Route path="*" element={<Notfound />} />
       </Routes>
     </>
   );
